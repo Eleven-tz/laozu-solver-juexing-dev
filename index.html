@@ -754,7 +754,7 @@ function loadFile(file){
     const cx=cv.getContext("2d");cx.drawImage(img,0,0,w,h);
     adoptCanvas(cv,"图片");
   };
-  img.onerror=()=>toast("图片读取失败");
+  img.onerror=()=>{URL.revokeObjectURL(url);toast("图片读取失败");};
   img.src=url;
 }
 $("fileInput").addEventListener("change",e=>loadFile(e.target.files[0]));
@@ -2083,7 +2083,7 @@ function renderAwakenHint(){
   $("awakenHint").style.display=show?"":"none";
 }
 $("btnSet60").onclick=()=>{$("budget").value="60";S.budget=60;save();renderAwakenHint();};
-function log(msg){const l=$("log");l.textContent+=msg+"\n";l.scrollTop=l.scrollHeight;}
+function log(msg){const l=$("log");const lines=(l.textContent+msg+"\n").split("\n");l.textContent=lines.length>300?lines.slice(-300).join("\n"):lines.join("\n");l.scrollTop=l.scrollHeight;}
 
 /* ================= 计分（复刻原工具 Q1） ================= */
 function buildTalentMap(ids){
