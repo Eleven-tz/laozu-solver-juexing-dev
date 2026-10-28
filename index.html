@@ -1391,7 +1391,7 @@ const ELDER_MAP={
    蓝长老模板（长老品质2，共16件，每系2件）：觉1 self_mult 2000、觉2 返还（按各自长老种子，不计分记为空）、觉3 self_mult 3000、
    觉4 返还（同觉2）、觉5 self_per_adjacent 本系/攻击力(attr 2004)/每件4000。2026-10-27 用户引仙破道觉醒面板截图实证，
    并确认所有蓝长老觉醒1-5均为此模板；其中13件此前整件缺失、3件（金翎荡云/炎驹驰天/叱咤玉革）原 maxLevel 3，现一并补齐至5级
-   数据来源：2026-09-30 用户截图转录64件 + 2026-10-27 蓝长老模板补13件，共77件；仍缺3件（晴水华盖/冰魄华盖/万载玄冰）标无数据 */
+   数据来源：2026-09-30 用户截图转录64件 + 2026-10-27 蓝长老模板补13件 + 2026-10-28 晴水华盖按玄水护心模板推断补入，共78件；仍缺2件（冰魄华盖/万载玄冰）标无数据 */
 const AWAKEN_DB={
 150103:{ // 金辉裂穹
   maxLevel:5,
@@ -2071,6 +2071,16 @@ const AWAKEN_DB={
     3:[{type:"global_form",form:2,pct:1500,excludeSelf:true}],
     4:[{type:"self_mult",pct:3000}],
     5:[{type:"global_element",element:2,pct:1500,excludeSelf:true}],
+  }
+},
+250303:{ // 晴水华盖（2026-10-28 按同系同形状同品质的玄水护心模板推断补入，用户确认；未经面板实证）
+  maxLevel:5,
+  levels:{
+    1:[{type:"self_per_adjacent",element:3,attr:2069,perUnit:1000}],
+    2:[{type:"self_mult",pct:2000}],
+    3:[{type:"adjacent_buff",element:3,pct:800}],
+    4:[{type:"self_mult",pct:3000}],
+    5:[{type:"adjacent_buff",element:3,pct:1500}],
   }
 },
 250304:{ // 弱水涓扇
